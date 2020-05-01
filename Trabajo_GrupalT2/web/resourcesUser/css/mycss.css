@@ -1,0 +1,22 @@
+td{
+    max-width: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;  
+    vertical-align: middle;
+    text-align: center;
+    align-items: center;
+}
+
+.miTexto{
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+.borde{
+    border: 1px solid grey;
+}
+
+.azul{
+    color: #36A0FF;
+}

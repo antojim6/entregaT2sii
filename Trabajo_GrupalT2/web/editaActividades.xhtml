@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" 
+   xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:h="http://xmlns.jcp.org/jsf/html"
+   xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+   xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+   xmlns:f="http://xmlns.jcp.org/jsf/core"
+   xmlns:p="http://primefaces.org/ui"
+   xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+   <h:head>
+      <!-- Required meta tags-->
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta name="description" content="au theme template" />
+      <meta name="author" content="Hau Nguyen" />
+      <meta name="keywords" content="au theme template" />
+      <!-- Title Page-->
+      <title>Editar actividades</title>
+      <!-- Fontfaces CSS-->
+      <link href="resourcesUser/css/tablaProyectos.css" rel="stylesheet" media="all" />
+      <link href="resourcesUser/css/font-face.css" rel="stylesheet" media="all" />
+      <link href="resourcesUser/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all" />
+      <link href="resourcesUser/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all" />
+      <link href="resourcesUser/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all" />
+      <!-- Bootstrap CSS-->
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+      <link href="resourcesUser/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all" />
+      <!-- resourcesUser/vendor CSS-->
+      <link href="resourcesUser/vendor/animsition/animsition.min.css" rel="stylesheet" media="all" />
+      <link href="resourcesUser/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all" />
+      <link href="resourcesUser/vendor/wow/animate.css" rel="stylesheet" media="all" />
+      <link href="resourcesUser/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all" />
+      <link href="resourcesUser/vendor/slick/slick.css" rel="stylesheet" media="all" />
+      <link href="resourcesUser/vendor/select2/select2.min.css" rel="stylesheet" media="all" />
+      <link href="resourcesUser/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all" />
+      <!-- Main CSS-->
+      <link href="resourcesUser/css/theme.css" rel="stylesheet" media="all" />
+      <!-- Popup-->
+      <link href="resourcesUser/css/popup.css" rel="stylesheet" media="all" />
+      <link href="resourcesUser/css/mycss.css" rel="stylesheet" media="all" />
+      <script src="https://kit.fontawesome.com/9664cb80d9.js" crossorigin="anonymous"></script>
+   </h:head>
+   <body class="animsition">
+      <meta charset="UTF-8" />
+      <div class="page-wrapper">
+         <!-- HEADER MOBILE-->
+         <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+               <div class="container-fluid">
+                  <div class="header-mobile-inner">
+                     <button class="hamburger hamburger--slider" type="button">
+                     <span class="hamburger-box">
+                     <span class="hamburger-inner" />
+                     </span>
+                     </button>
+                  </div>
+               </div>
+            </div>
+            <nav class="navbar-mobile">
+               <div class="container-fluid">
+                  <ul class="navbar-mobile__list list-unstyled">
+                     <li class="has-sub">
+                        <a class="js-arrow" href="usuarioOng.xhtml">
+                        <i class="fas fa-tachometer-alt" />General</a>
+                     </li>
+                     <li>
+                        <c:if test="#{controlAutorizacion.rol eq 1}">
+                           <a href="listaProyectos.xhtml">
+                           <i class="fas fa-align-justify" />Mis Proyectos</a>
+                        </c:if>
+                        <c:if test="#{controlAutorizacion.rol eq 2}">
+                           <a href="listaProyectos.xhtml">
+                           <i class="fas fa-align-justify" />Buscar proyectos</a>
+                        </c:if>
+                     </li>
+                     <li>
+                        <a href="login.xhtml">
+                        <i class="fas fa-sign-out-alt" />Desconectar</a>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+         </header>
+         <!-- END HEADER MOBILE-->
+         <!-- MENU SIDEBAR-->
+         <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+               <div class="header-button">
+                  <div class="noti-wrap">
+                     <div class="account-wrap">
+                        <div class="account-item clearfix js-item-menu">
+                           <div class="image">
+                              <img src="resourcesUser/images/icon/ong_logo.png" alt="John Doe" />
+                           </div>
+                           <div class="content">
+                              <a class="js-acc-btn" href="#"> #{controlAutorizacion.usuario.nombre} </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+               <nav class="navbar-sidebar">
+                  <ul class="list-unstyled navbar__list">
+                     <li>
+                        <c:if test="#{controlAutorizacion.rol eq 1}">
+                           <a href="usuarioOng.xhtml">
+                           <i class="fas fa-tachometer-alt" />General</a>
+                        </c:if>
+                        <c:if test="#{controlAutorizacion.rol eq 2}">
+                           <a href="usuarioDocencia.xhtml">
+                           <i class="fas fa-tachometer-alt" />General</a>
+                        </c:if>
+                     </li>
+                     <li class="active has-sub">
+                        <c:if test="#{controlAutorizacion.rol eq 1}">
+                           <a href="listaProyectos.xhtml">
+                           <i class="fas fa-align-justify" />Mis Proyectos</a>
+                        </c:if>
+                        <c:if test="#{controlAutorizacion.rol eq 2}">
+                           <a href="listaProyectos.xhtml">
+                           <i class="fas fa-align-justify" />Buscar proyectos</a>
+                        </c:if>
+                     </li>
+                     <li>
+                        <a href="login.xhtml">
+                        <i class="fas fa-sign-out-alt" />Desconectar</a>
+                     </li>
+                  </ul>
+               </nav>
+            </div>
+         </aside>
+         <!-- END MENU SIDEBAR-->
+         <!-- PAGE CONTAINER-->
+         <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop">
+               <div class="section__content section__content--p30">
+                  <div class="container-fluid">
+                     <div class="header-wrap">
+                     </div>
+                  </div>
+               </div>
+            </header>
+            <!-- HEADER DESKTOP-->
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+               <div class="section__content section__content--p30">
+                  <div class="container-fluid">
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-md-12">
+                              <div class="well well-sm">
+                                 <h:form class="form-horizontal">
+                                    <fieldset>
+                                       <legend class="text-center header"> Modificar Actividades </legend>
+                                       <div class="form-group">
+                                          <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-people-carry fa-2x azul"></i> <span class="miTexto">Elegir Actividad</span> </span>
+                                          <c:if test="#{controlAutorizacion.rol eq 1}">
+                                             <h:selectOneMenu id="select" class="form-control borde" binding = "#{varA}">
+                                                <f:selectItems value="#{ControlProyectos.listaActividades}" var="c"
+                                                   itemLabel="#{c.nombre}"/>
+                                             </h:selectOneMenu>
+                                          </c:if>
+                                          <c:if test="#{controlAutorizacion.rol eq 2}">
+                                             <h:selectOneMenu id="select" class="form-control borde" binding = "#{varA}">
+                                                <f:selectItems value="#{ControlProyectos.misActividadesDocencia}" var="c"
+                                                   itemLabel="#{c.nombre}"/>
+                                             </h:selectOneMenu>
+                                          </c:if>
+                                       </div>
+                                       <div class="form-group">
+                                          <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-brain fa-2x azul"></i> <span class="miTexto">Conocimientos necesarios</span> </span>
+                                          <h:inputText id="conoc" class="form-control borde" binding="#{varconoc}"/>
+                                       </div>
+                                       <div class="form-group">
+                                          <span class="col-md-1 col-md-offset-2 text-center"><i class="far fa-calendar-check fa-2x azul"></i> <span class="miTexto">Fecha inicio (dd/mm/yyyy)</span> </span>
+                                          <h:inputText id="date1" class="form-control borde" binding="#{vardate1}"/>
+                                       </div>
+                                       <div class="form-group">
+                                          <span class="col-md-1 col-md-offset-2 text-center"><i class="far fa-calendar-times fa-2x azul"></i> <span class="miTexto">Fecha final (dd/mm/yyyy)</span> </span>
+                                          <h:inputText id="date2" class="form-control borde" binding="#{vardate2}"/>
+                                       </div>
+                                       <div class="form-group">
+                                          <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-pen-square fa-2x azul"></i> <span class="miTexto">Descripción de la actividad</span> </span>
+                                          <h:inputTextarea class="form-control borde" id="descact" rows="7" binding="#{varDescact}" />
+                                       </div>
+                                       <c:if test="#{ControlProyectos.listaActividades.size() ne 0}">
+                                          <div class="form-group">
+                                             <h:commandButton type="submit" class="btn btn-primary btn-lg" action="#{ControlProyectos.editarActividad(varA.value, varDescact.value, varconoc.value, vardate1.value,vardate2.value)}" value="Aceptar" />
+                                             <c:if test="#{controlAutorizacion.rol eq 1}">
+                                                <h:commandButton type="submit" class="btn btn-secondary btn-lg" action="#{ControlProyectos.eliminarActividad(varA.value)}" value="Eliminar Actividad" />
+                                             </c:if>
+                                          </div>
+                                       </c:if>
+                                    </fieldset>
+                                 </h:form>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- END MAIN CONTENT-->
+                  <!-- END PAGE CONTAINER-->
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Jquery JS-->
+      <script src="resourcesUser/vendor/jquery-3.2.1.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <!-- Bootstrap JS-->
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+      <script src="resourcesUser/vendor/bootstrap-4.1/popper.min.js"></script>
+      <script src="resourcesUser/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+      <!-- resourcesUser/vendor JS       -->
+      <script src="resourcesUser/vendor/slick/slick.min.js"></script>
+      <script src="resourcesUser/vendor/wow/wow.min.js"></script>
+      <script src="resourcesUser/vendor/animsition/animsition.min.js"></script>
+      <script src="resourcesUser/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+      <script src="resourcesUser/vendor/counter-up/jquery.waypoints.min.js"></script>
+      <script src="resourcesUser/vendor/counter-up/jquery.counterup.min.js"></script>
+      <script src="resourcesUser/vendor/circle-progress/circle-progress.min.js"></script>
+      <script src="resourcesUser/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+      <script src="resourcesUser/vendor/chartjs/Chart.bundle.min.js"></script>
+      <script src="resourcesUser/vendor/select2/select2.min.js"></script>
+      <!-- Main JS-->
+      <script src="resourcesUser/js/main.js"></script>
+      <!-- end document-->
+   </body>
+</html>
+
